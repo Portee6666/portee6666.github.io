@@ -12,7 +12,7 @@ body {
 }
 
 .piano {
-  display: flex;
+  display: grid; align-items: end;
 }
 
 .key {
