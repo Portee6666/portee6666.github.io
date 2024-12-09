@@ -42,3 +42,7 @@ body {
 .black.active {
   background-color: #333;
 }
+
+title {
+font-family: "Brush Script MT"
+}
