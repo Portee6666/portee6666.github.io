@@ -22,18 +22,18 @@
 	  
 <Center>	
   <div class="piano">
-    <div data-note="C3" id="z" class="key white" onkeypress="joueUnC()""></div>
-    <div data-note="Db3" id="s" class="key black"  onkeypress="joueUnDb()"></div>
-    <div data-note="D3" id="x" class="key white"  onkeypress="joueUnD()"></div>
-    <div data-note="Eb3" class="key black"  onclick="joueUnEb()"></div>
-    <div data-note="E3" class="key white"  onclick="joueUnE()"></div>
-    <div data-note="F3" class="key white"  onclick="joueUnF()"></div>
-    <div data-note="Gb3" class="key black"  onclick="joueUnGb()"></div>
-    <div data-note="G3" class="key white"  onclick="joueUnG()"></div>
-    <div data-note="Ab3" class="key black"  onclick="joueUnAb()"></div>
-    <div data-note="A3"  class="key white"  onclick="joueUnA()"></div>
-    <div data-note="Bb3" class="key black"  onclick="joueUnBb()"></div>
-    <div data-note="B3" class="key white"  onclick="joueUnB()"></div>
+    <div data-note="C3" id="z" class="key white" onkeydown="joueUnC()""></div>
+    <div data-note="Db3" id="s" class="key black"  onkeydown="joueUnDb()"></div>
+    <div data-note="D3" id="x" class="key white"  onkeydown="joueUnD()"></div>
+    <div data-note="Eb3" class="key black"  onkeydown="joueUnEb()"></div>
+    <div data-note="E3" class="key white"  onkeydown="joueUnE()"></div>
+    <div data-note="F3" class="key white"  onkeydown="joueUnF()"></div>
+    <div data-note="Gb3" class="key black"  onkeydown="joueUnGb()"></div>
+    <div data-note="G3" class="key white"  onkeydown="joueUnG()"></div>
+    <div data-note="Ab3" class="key black"  onkeydown="joueUnAb()"></div>
+    <div data-note="A3"  class="key white"  onkeydown="joueUnA()"></div>
+    <div data-note="Bb3" class="key black"  onkeydown="joueUnBb()"></div>
+    <div data-note="B3" class="key white"  onkeydown="joueUnB()"></div>
   </div>
 
   <audio id="C3" src="notes/C3.mp3"></audio>
@@ -58,56 +58,13 @@
     <div id="divAffiche">
   <script>
 
-var addEvent = document.addEventListener ? function(target,type,action){
-    if(target){
-        target.addEventListener(type,action,false);
-    }
-} : function(target,type,action){
-    if(target){
-        target.attachEvent('on' + type,action,false);
-    }
+function joueUnC(event) {
+  let key = event.key;
+  if (key == "z") { 
+    let text = "You pressed the 'z' key!";
+    document.getElementById("divAffiche").innerHTML = text;
+  }
 }
-
-addEvent(document,'keydown',function(e){
-    e = e || window.event;
-    var key = e.which || e.keyCode;
-    if(key===122){
-        example();
-    }
-});
-
-	  
-function joueUnC() {
-	alert(bonjour)
-
-}
-
-function joueUnDb()
-
-function joueUnD()
-
-function joueUnEb()
-
-function joueUnE()
-
-function joueUnF()
-
-function joueUnGb()
-
-function joueUnG()
-
-function joueUnAb()
-
-function joueUnA()
-
-function joueUnBb()
-
-function joueUnB()
-
-
-	var KeypressFunctions = [];
-	KeypressFunctions['z'.charCodeAt(0)] = joueUnD()
-
     
 		
   </script>
