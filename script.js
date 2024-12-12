@@ -21,7 +21,7 @@ document.addEventListener('keydown', e => {
 })
 
 function playNote(key) {
- let text = "You pressed the " + key + " key!";
+ let text = "You pressed the " + key.dataset.note + " key!";
     document.getElementById("divAffiche").innerHTML = text;
   const noteAudio = document.getElementById(key.dataset.note)
   noteAudio.currentTime = 0
