@@ -53,7 +53,8 @@
   
     <div id="divAffiche">
   <script>
-    
+
+	  
 	const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
 const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j']
 
@@ -86,6 +87,12 @@ function playNote(key) {
     key.classList.remove('active')
   })
 }
+
+	  if (key.dataset.note = C3) {
+		var affiche = document.getElementById("divAffiche");
+		var message = "<br><hr><br>Tu a cliquez sur C3"
+		affiche.innerHTML = message
+	  }
 		
   </script>
 
