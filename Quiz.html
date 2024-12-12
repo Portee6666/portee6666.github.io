@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,22 +7,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
-  <title>Portée</title>
+  <title>Jeux</title>
 </head>
 <body>
+  <Center><h1>Jeux</h1>
+<br></br>
+
+
+	  
+	  
+<Center>	
   <div class="piano">
-    <div data-note="C3" class="key white"></div>
-    <div data-note="Db3" class="key black"></div>
-    <div data-note="D3" class="key white"></div>
-    <div data-note="Eb3" class="key black"></div>
-    <div data-note="E3" class="key white"></div>
-    <div data-note="F3" class="key white"></div>
-    <div data-note="Gb3" class="key black"></div>
-    <div data-note="G3" class="key white"></div>
-    <div data-note="Ab3" class="key black"></div>
-    <div data-note="A3" class="key white"></div>
-    <div data-note="Bb3" class="key black"></div>
-    <div data-note="B3" class="key white"></div>
+    <div data-note="C3" id="z" class="key white" onkeydown="joueUnC()"></div>
+    <div data-note="Db3" id="s" class="key black"  onkeydown="joueUnDb()"></div>
+    <div data-note="D3" id="x" class="key white"  onkeydown="joueUnD()"></div>
+    <div data-note="Eb3" class="key black"  onkeydown="joueUnEb()"></div>
+    <div data-note="E3" class="key white"  onkeydown="joueUnE()"></div>
+    <div data-note="F3" class="key white"  onkeydown="joueUnF()"></div>
+    <div data-note="Gb3" class="key black"  onkeydown="joueUnGb()"></div>
+    <div data-note="G3" class="key white"  onkeydown="joueUnG()"></div>
+    <div data-note="Ab3" class="key black"  onkeydown="joueUnAb()"></div>
+    <div data-note="A3"  class="key white"  onkeydown="joueUnA()"></div>
+    <div data-note="Bb3" class="key black"  onkeydown="joueUnBb()"></div>
+    <div data-note="B3" class="key white"  onkeydown="joueUnB()"></div>
   </div>
 
   <audio id="C3" src="notes/C3.mp3"></audio>
@@ -37,30 +45,60 @@
   <audio id="Bb3" src="notes/Bb3.mp3"></audio>
   <audio id="B3" src="notes/B3.mp3"></audio>
 
-
-
-
-
-
-
-
-
-
-<script>
-
-
+  </Center>
 
 
 
 
   
-</script>
+    <div id="divAffiche">
+  <script>
 
+function joueUnC(event) {
+  let key = event.key;
+  if (key == "z") { 
+    let text = "You pressed the 'z' key!";
+    document.getElementById("divAffiche").innerHTML = text;
+  }
+}
+    
+	const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j']
 
+const keys = document.querySelectorAll('.key')
+const whiteKeys = document.querySelectorAll('.key.white')
+const blackKeys = document.querySelectorAll('.key.black')
 
+keys.forEach(key => {
+  key.addEventListener('click', () => playNote(key))
+})
 
+document.addEventListener('keydown', e => {
+  if (e.repeat) return
+  const key = e.key
+  const whiteKeyIndex = WHITE_KEYS.indexOf(key)
+  const blackKeyIndex = BLACK_KEYS.indexOf(key)
 
+  if (whiteKeyIndex > -1) playNote(whiteKeys[whiteKeyIndex])
+  if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex])
+})
 
+function playNote(key) {
+ let text = "You pressed the " + key.dataset.note + " key!";
+    document.getElementById("divAffiche").innerHTML = text;
+  const noteAudio = document.getElementById(key.dataset.note)
+  noteAudio.currentTime = 0
+  noteAudio.play()
+  key.classList.add('active')
+  noteAudio.addEventListener('ended', () => {
+    key.classList.remove('active')
+  })
+}
+		
+  </script>
+
+<p>↓Clicker ici↓<p/>
+		<a href="index.html">Retour a Enseignant de piano</a>
   
 </body>
 </html>
