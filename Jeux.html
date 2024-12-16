@@ -88,9 +88,21 @@ function playNote(key) {
     key.classList.remove('active')
   })
 }
-		
 
-	 
+let noteQuestion = ""; // Store the current letter
+
+function generateQuestion() {
+
+  const randomIndex = Math.floor(Math.random() * letters.length);
+  currentLetter = letters[randomIndex]; 
+
+  document.getElementById("letter").innerText = noteQuestion;
+}
+
+// Call generateLetter when the page loads
+window.onload = function () {
+  generateQuestion();
+};
 	
 </script>
 
