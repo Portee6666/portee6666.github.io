@@ -23,9 +23,9 @@
 	  
 <Center>	
   <div class="piano">
-    <div data-note="C3" id="z" class="key white" onkeydown="joueUnC()"></div>
-    <div data-note="Db3" id="s" class="key black"  onkeydown="joueUnDb()"></div>
-    <div data-note="D3" id="x" class="key white"  onkeydown="joueUnD()"></div>
+    <div data-note="C3" class="key white" onkeydown="joueUnC()"></div>
+    <div data-note="Db3" class="key black"  onkeydown="joueUnDb()"></div>
+    <div data-note="D3" class="key white"  onkeydown="joueUnD()"></div>
     <div data-note="Eb3" class="key black"  onkeydown="joueUnEb()"></div>
     <div data-note="E3" class="key white"  onkeydown="joueUnE()"></div>
     <div data-note="F3" class="key white"  onkeydown="joueUnF()"></div>
@@ -52,16 +52,103 @@
 </Center>
 </Center>
 
-
+<div id="quiz"></div>
 
 	<div id=divAffiche>
 <script>
-	const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+
+// Array containing the questions
+var questions = [
+  "What is the capital of Spain?",
+  "Who won the FIFA Women's World Cup in 2019?",
+  "What is the smallest country in the world?",
+  "Who invented the telephone?",
+  "What is the tallest mountain in the world?"
+];
+var reponses = [
+"  
+
+// Function to select a random question from the array
+function getRandomQuestion() {
+  var randomIndex = Math.floor(Math.random() * questions.length);
+  return questions[randomIndex];
+}
+
+// Function to display the quiz
+function displayQuiz(maxQuestions) {
+  var quiz = document.getElementById("quiz");
+  var numQuestionsDisplayed = 0;
+
+  // Loop until max number of questions are displayed
+  //while (numQuestionsDisplayed < maxQuestions) {
+    var question = getRandomQuestion();
+
+    // Add the question to the quiz
+    var questionDiv = document.createElement("div");
+    questionDiv.innerHTML = question;
+    quiz.appendChild(questionDiv);
+
+    // Increment the number of questions displayed
+    //numQuestionsDisplayed++;
+  //}
+}
+
+// Call the function to display the quiz (10 questions in this example)
+displayQuiz(10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
 const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j']
 
 const keys = document.querySelectorAll('.key')
 const whiteKeys = document.querySelectorAll('.key.white')
 const blackKeys = document.querySelectorAll('.key.black')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 keys.forEach(key => {
   key.addEventListener('click', () => playNote(key))
@@ -91,7 +178,16 @@ function playNote(key) {
 
 
 
-	
+
+
+
+
+
+
+
+
+
+
 </script>
 
 
