@@ -57,20 +57,47 @@
 	<div id=divAffiche>
 <script>
 
+var randomIndex;
+
+
 // Array containing the questions
 var questions = [
-  "What is the capital of Spain?",
-  "Who won the FIFA Women's World Cup in 2019?",
-  "What is the smallest country in the world?",
-  "Who invented the telephone?",
-  "What is the tallest mountain in the world?"
+ '<img src="Questions/q1.png">',
+ '<img src="Questions/q2.png">',
+ '<img src="Questions/q3.png">',
+ '<img src="Questions/q4.png">',
+ '<img src="Questions/q5.png">',
+ '<img src="Questions/q6.png">',
+ '<img src="Questions/q7.png">',
+ '<img src="Questions/q8.png">',
+ '<img src="Questions/q9.png">',
+ '<img src="Questions/q10.png">',
+ '<img src="Questions/q11.png">',
+ '<img src="Questions/q12.png">',
 ];
+
+
 var reponses = [
-"  
+"C3",
+"Db3",
+"D3",
+"Eb3",
+"E3",
+"F3",
+"Gb3",
+"G3",
+"Ab3",
+"A3",
+"B3",
+"Bb3",
+];
+
+
+
 
 // Function to select a random question from the array
 function getRandomQuestion() {
-  var randomIndex = Math.floor(Math.random() * questions.length);
+  randomIndex = Math.floor(Math.random() * questions.length);
   return questions[randomIndex];
 }
 
@@ -84,28 +111,9 @@ function displayQuiz(maxQuestions) {
     var question = getRandomQuestion();
 
     // Add the question to the quiz
-    var questionDiv = document.createElement("div");
-    questionDiv.innerHTML = question;
-    quiz.appendChild(questionDiv);
+quiz.innerHTML = question;
 
-    // Increment the number of questions displayed
-    //numQuestionsDisplayed++;
-  //}
 }
-
-// Call the function to display the quiz (10 questions in this example)
-displayQuiz(10);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -115,39 +123,6 @@ const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j']
 const keys = document.querySelectorAll('.key')
 const whiteKeys = document.querySelectorAll('.key.white')
 const blackKeys = document.querySelectorAll('.key.black')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 keys.forEach(key => {
@@ -174,22 +149,18 @@ function playNote(key) {
   noteAudio.addEventListener('ended', () => {
     key.classList.remove('active')
   })
+  if (key.dataset.note == reponses[randomIndex]){
+	alert("Bonne réponse")
+	displayQuiz()
+  } else {
+	alert("mauvaise réponse")
+	displayQuiz()
+  }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
 </script>
-
 
 
 
