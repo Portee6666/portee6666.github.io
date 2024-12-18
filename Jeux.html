@@ -59,6 +59,10 @@
 
 var randomIndex;
 
+var nombreQuestions = 0
+  
+var correct = 0
+var incorrect = 0
 
 // Array containing the questions
 var questions = [
@@ -115,8 +119,14 @@ quiz.innerHTML = question;
 
 }
 
-// Call the function to display the quiz (10 questions in this example)
-displayQuiz(10);
+
+
+// Call the function to display the quiz
+displayQuiz(11);
+
+
+
+
 
 
 const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
@@ -150,14 +160,29 @@ function playNote(key) {
   noteAudio.addEventListener('ended', () => {
     key.classList.remove('active')
   })
-  if (key.dataset.note == reponses[randomIndex]){
-	alert("Bonne réponse")
+  
+  while (nombreQuestions <= 12) {
+
+
+}  
+  
+  
+  
+  
+ if (key.dataset.note = reponses[randomIndex]){
+	correct++
 	displayQuiz()
+	questions.pop()
   } else {
-	alert("mauvaise réponse")
+    incorrect++
 	displayQuiz()
+	questions.pop()
   }
+alert("Bravo " + correct + "       womp womp      " + incorrect)
 }
+
+
+
 
 
 
