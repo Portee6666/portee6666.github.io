@@ -59,7 +59,6 @@
 
 var randomIndex;
 
-var nombreQuestions = 0
   
 var correct = 0
 var incorrect = 0
@@ -160,18 +159,16 @@ function playNote(key) {
   noteAudio.addEventListener('ended', () => {
     key.classList.remove('active')
   })
-  
-  while (nombreQuestions <= 12) {
+ 
 if (key.dataset.note = reponses[randomIndex]){
 	correct++;
 	displayQuiz();
 	questions.pop();
   } else {
-    incorrect++;
+    	incorrect++;
 	displayQuiz();
 	questions.pop();
   }
-}    
 alert = ("Bravo " + correct + "       womp womp      " + incorrect);
 }
 
