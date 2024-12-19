@@ -12,6 +12,7 @@ body {
       justify-content: center;
       align-items: flex-end;
       position: absolute;
+  bottom: 0;
 }
 
 .key {
