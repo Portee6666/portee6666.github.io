@@ -54,7 +54,7 @@
   
     <div id="divAffiche">
   <script>
-//
+//Liste des touches qui jouent des notes
 const resultNotePlayed = document.getElementById("key");
 const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
 const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j']
@@ -77,6 +77,7 @@ document.addEventListener('keydown', e => {
   if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex])
 })
 
+//Fonction qui dis à l'utilisateur quelle note ils ont joué. 
 function playNote(key) {
  let text = "Tu as pesé un " + key.dataset.note;
     document.getElementById("divAffiche").innerHTML = text;
@@ -88,19 +89,6 @@ function playNote(key) {
     key.classList.remove('active')
   })
 }
-
-document.addEventListener("keydown", 
-function(pressC3) {
-	if (pressC3.key === "z") {
-		alert(Vous a completer la tutoriel! Yahoo);
-		document.body.style.backroundColor = "Lime"
-	}
-});
-
- 
-
-
-
 	  
   </script>
   
