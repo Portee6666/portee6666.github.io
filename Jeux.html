@@ -151,7 +151,7 @@ document.addEventListener('keydown', e => {
 })
 
 function playNote(key) {
- let text = "You pressed the " + key.dataset.note + " key!";
+ let text = "Tu as clické la note " + key.dataset.note;
     document.getElementById("divAffiche").innerHTML = text;
   const noteAudio = document.getElementById(key.dataset.note)
   noteAudio.currentTime = 0
@@ -170,7 +170,8 @@ if (key.dataset.note = reponses[randomIndex]){
 	displayQuiz();
 	questions.pop();
   }
-alert("Bravo " + correct + "       womp womp      " + incorrect);
+let text = "Tu as eu " + correct + " de bien et " + incorrect + " de mal"
+	document.getElementById("divAffiche").innerHTML = text;
 }
 
 </script>
