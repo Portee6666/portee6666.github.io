@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-//Code Css
+<!--Code CSS-->
 <style>
 	.title {background: rgb(236, 207, 202);padding:6px;border:10px;border-style: solid; rbg(207, 202, 236);font-family: cursive; font-size: 20px;} 
 	table, th, td {border: 5px solid; font-size: 40px;}
@@ -9,14 +9,18 @@
   text-align: center;
 }
 </style>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+	<!--Titre de la page-->
   <title>Jeux</title>
 </head>
+	
 <body>
+<!--En têtes-->
  <h1 class="centered">Jeux</h1>
 <br>
 <br>
@@ -26,15 +30,16 @@
 <div id="quiz"></div>
 
 	<div id=divAffiche>
+
+<!--Code javascript-->
 <script>
 
+//Création des variables et des tableaux
 var randomIndex;
-
-  
 var correct = 0
 var incorrect = 0
 
-// Array containing the questions
+// Tableau avec les questions
 var questions = [
  '<img src="Questions/q1.png">',
  '<img src="Questions/q2.png">',
@@ -50,7 +55,7 @@ var questions = [
  '<img src="Questions/q12.png">',
 ];
 
-
+// Tableau avec les réponses au questions
 var reponses = [
 "C3",
 "Db3",
@@ -66,39 +71,24 @@ var reponses = [
 "Bb3",
 ];
 
-
-
-
-// Function to select a random question from the array
+// Fonction qui choisi une questions aléatoire du tableau
 function getRandomQuestion() {
   randomIndex = Math.floor(Math.random() * questions.length);
   return questions[randomIndex];
 }
 
-// Function to display the quiz
+// Fonction qui affiche la question
 function displayQuiz(maxQuestions) {
   var quiz = document.getElementById("quiz");
   var numQuestionsDisplayed = 0;
+  var question = getRandomQuestion();
 
-  // Loop until max number of questions are displayed
-  //while (numQuestionsDisplayed < maxQuestions) {
-    var question = getRandomQuestion();
-
-    // Add the question to the quiz
+// Ajoute la question au quiz
 quiz.innerHTML = question;
-
 }
-
-
-
-// Call the function to display the quiz
+// Appelle à la fonction pour afficher le quiz
 displayQuiz(11);
-
-
-
-
-
-
+// Tableau avec les notes sur le piano
 const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
 const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j']
 
@@ -106,6 +96,7 @@ const keys = document.querySelectorAll('.key')
 const whiteKeys = document.querySelectorAll('.key.white')
 const blackKeys = document.querySelectorAll('.key.black')
 
+// Quand la touche sur le clvier est pesé, la note va jouer
 keys.forEach(key => {
   key.addEventListener('click', () => playNote(key))
 })
@@ -120,7 +111,9 @@ document.addEventListener('keydown', e => {
   if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex])
 })
 
+
 function playNote(key) {
+// Fais en sorte que la note peut être jouer plusieurs fois rapidement, sinon il faudrait attendre pour l'audio à terminer
   const noteAudio = document.getElementById(key.dataset.note)
   noteAudio.currentTime = 0
   noteAudio.play()
@@ -128,7 +121,7 @@ function playNote(key) {
   noteAudio.addEventListener('ended', () => {
     key.classList.remove('active')
   })
- 
+//Vérifie si la note entrée par l'utilisateur est la bonne note pour la question et compte le nombre de bonne réponses et de mauvaise réponses
 if (key.dataset.note === reponses[randomIndex]){
 	correct++;
 	displayQuiz();
@@ -136,16 +129,15 @@ if (key.dataset.note === reponses[randomIndex]){
     	incorrect++;
 	displayQuiz();
   }
- let text = "Tu a eu " + correct + " questions de bien et " + incorrect + " de mal";
+//Affiche le montant de bonne et de mauvaises réponses
+let text = "Tu a eu " + correct + " questions de bien et " + incorrect + " de mal";
     document.getElementById("divAffiche").innerHTML = text;
 
 }
 	
 </script>
 
-
-	
-<Center>	
+<!--Création des notes de pianos et le lien avec les audios-->
   <div class="piano">
     <div data-note="C3" class="key white" onkeydown="joueUnC()"></div>
     <div data-note="Db3" class="key black"  onkeydown="joueUnDb()"></div>
@@ -173,13 +165,6 @@ if (key.dataset.note === reponses[randomIndex]){
   <audio id="A3" src="notes/A3.mp3"></audio>
   <audio id="Bb3" src="notes/Bb3.mp3"></audio>
   <audio id="B3" src="notes/B3.mp3"></audio>
-</Center>
-</Center>
-
-
-
-
-
 
 
 	
