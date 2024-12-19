@@ -1,27 +1,15 @@
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  text-align: center;
-  min-height: 100vh; /* Full viewport height */
-}
-
-.centered-header {
-  margin: 10px 0;
+body {
+  background-color: #dbcda0;
 }
 
 .piano {
   display: flex;
+  align-self: center;
   justify-content: center;
-  flex-wrap: wrap;
-  margin: 20px 0;
 }
 
 .key {
@@ -51,3 +39,6 @@ body, html {
   background-color: #333;
 }
 
+title {
+font-family: "Brush Script MT", Cursive;
+}
