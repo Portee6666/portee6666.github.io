@@ -36,39 +36,6 @@ body {
 <br>
 </center>
 
-<!--Création des notes de pianos et le lien avec les audios-->
-  <div class="piano">
-    <div data-note="C3" class="key white" onkeydown="joueUnC()"></div>
-    <div data-note="Db3" class="key black"  onkeydown="joueUnDb()"></div>
-    <div data-note="D3" class="key white"  onkeydown="joueUnD()"></div>
-    <div data-note="Eb3" class="key black"  onkeydown="joueUnEb()"></div>
-    <div data-note="E3" class="key white"  onkeydown="joueUnE()"></div>
-    <div data-note="F3" class="key white"  onkeydown="joueUnF()"></div>
-    <div data-note="Gb3" class="key black"  onkeydown="joueUnGb()"></div>
-    <div data-note="G3" class="key white"  onkeydown="joueUnG()"></div>
-    <div data-note="Ab3" class="key black"  onkeydown="joueUnAb()"></div>
-    <div data-note="A3"  class="key white"  onkeydown="joueUnA()"></div>
-    <div data-note="Bb3" class="key black"  onkeydown="joueUnBb()"></div>
-    <div data-note="B3" class="key white"  onkeydown="joueUnB()"></div>
-  </div>
-
-  <audio id="C3" src="notes/C3.mp3"></audio>
-  <audio id="Db3" src="notes/Db3.mp3"></audio>
-  <audio id="D3" src="notes/D3.mp3"></audio>
-  <audio id="Eb3" src="notes/Eb3.mp3"></audio>
-  <audio id="E3" src="notes/E3.mp3"></audio>
-  <audio id="F3" src="notes/F3.mp3"></audio>
-  <audio id="Gb3" src="notes/Gb3.mp3"></audio>
-  <audio id="G3" src="notes/G3.mp3"></audio>
-  <audio id="Ab3" src="notes/Ab3.mp3"></audio>
-  <audio id="A3" src="notes/A3.mp3"></audio>
-  <audio id="Bb3" src="notes/Bb3.mp3"></audio>
-  <audio id="B3" src="notes/B3.mp3"></audio>
-
-<div id="quiz"></div>
-
-<div id=divAffiche></div>
-<!--Code javascript-->
 <script>
 
 //Création des variables et des tableaux
@@ -172,5 +139,40 @@ let text = "Tu a eu " + correct + " questions de bien et " + incorrect + " de ma
 }
 	
 </script>
+	
+<!--Création des notes de pianos et le lien avec les audios-->
+  <div class="piano">
+    <div data-note="C3" class="key white" onkeydown="joueUnC()"></div>
+    <div data-note="Db3" class="key black"  onkeydown="joueUnDb()"></div>
+    <div data-note="D3" class="key white"  onkeydown="joueUnD()"></div>
+    <div data-note="Eb3" class="key black"  onkeydown="joueUnEb()"></div>
+    <div data-note="E3" class="key white"  onkeydown="joueUnE()"></div>
+    <div data-note="F3" class="key white"  onkeydown="joueUnF()"></div>
+    <div data-note="Gb3" class="key black"  onkeydown="joueUnGb()"></div>
+    <div data-note="G3" class="key white"  onkeydown="joueUnG()"></div>
+    <div data-note="Ab3" class="key black"  onkeydown="joueUnAb()"></div>
+    <div data-note="A3"  class="key white"  onkeydown="joueUnA()"></div>
+    <div data-note="Bb3" class="key black"  onkeydown="joueUnBb()"></div>
+    <div data-note="B3" class="key white"  onkeydown="joueUnB()"></div>
+  </div>
+
+  <audio id="C3" src="notes/C3.mp3"></audio>
+  <audio id="Db3" src="notes/Db3.mp3"></audio>
+  <audio id="D3" src="notes/D3.mp3"></audio>
+  <audio id="Eb3" src="notes/Eb3.mp3"></audio>
+  <audio id="E3" src="notes/E3.mp3"></audio>
+  <audio id="F3" src="notes/F3.mp3"></audio>
+  <audio id="Gb3" src="notes/Gb3.mp3"></audio>
+  <audio id="G3" src="notes/G3.mp3"></audio>
+  <audio id="Ab3" src="notes/Ab3.mp3"></audio>
+  <audio id="A3" src="notes/A3.mp3"></audio>
+  <audio id="Bb3" src="notes/Bb3.mp3"></audio>
+  <audio id="B3" src="notes/B3.mp3"></audio>
+
+<div id="quiz"></div>
+
+<div id=divAffiche></div>
+<!--Code javascript-->
+
 </body>
 </html>
