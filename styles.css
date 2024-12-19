@@ -9,7 +9,7 @@ body {
 
 .piano {
   display: flex;
-  align-self: end;
+  align-self: center;
   justify-content: center;
 }
 
