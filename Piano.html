@@ -11,7 +11,7 @@
 <body>
   <Center><h1>Piano Libre</h1>
 
-	  
+<!--Assignation des notes au audios-->
   <div class="piano">
     <div data-note="C3" class="key white"></div>
     <div data-note="Db3" class="key black"></div>
@@ -41,7 +41,9 @@
   <audio id="B3" src="notes/B3.mp3"></audio>
 
 
+	  
     <div id="divAffiche">
+	    
   <script>
     
 const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
@@ -65,6 +67,7 @@ document.addEventListener('keydown', e => {
   if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex])
 })
 
+//Explique quelle note l'utilisateur a jouer
 function playNote(key) {
  let text = "Tu a pesé la note " + key.dataset.note;
     document.getElementById("divAffiche").innerHTML = text;
@@ -78,14 +81,5 @@ function playNote(key) {
 }
 		
   </script>
-
-
-
-
-
-
-
-
-    
 </body>
 </html>
