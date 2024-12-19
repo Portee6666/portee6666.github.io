@@ -164,15 +164,15 @@ function playNote(key) {
 if (key.dataset.note = reponses[randomIndex]){
 	correct++;
 	displayQuiz();
-  } else {
+  } else if (key.dataset.note = reponses[randomIndex]){
     	incorrect++;
 	displayQuiz();
   }
-
-}
-	let message = "Tu as eu " + correct + " de bien et " + incorrect + " de mal"
+let message = "Tu as eu " + correct + " de bien et " + incorrect + " de mal"
 	document.getElementById("divAffiche").innerHTML = message;
 
+}
+	
 </script>
 
 
