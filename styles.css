@@ -8,9 +8,10 @@ body {
 }
 
 .piano {
-  display: flex;
-  align-self: center;
-  justify-content: center;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: absolute;
 }
 
 .key {
