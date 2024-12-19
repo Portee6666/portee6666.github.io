@@ -25,19 +25,29 @@ body, html {
 }
 
 .key {
-  width: 40px;
-  height: 100px;
-  margin: 2px;
-  border: 1px solid black;
+  height: calc(var(--width) * 4);
+  width: var(--width);
 }
 
-.key.black {
-  background: black;
-  width: 30px;
-  height: 60px;
-  margin: 0 2px;
+.white {
+  --width: 50px;
+  background-color: white;
+  border: 1px solid #333;
 }
 
-.key.white {
-  background: white;
+.white.active {
+  background-color: #CCC;
 }
+
+.black {
+  --width: 30px;
+  background-color: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  z-index: 2;
+}
+
+.black.active {
+  background-color: #333;
+}
+
