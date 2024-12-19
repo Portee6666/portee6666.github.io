@@ -164,11 +164,9 @@ function playNote(key) {
 if (key.dataset.note = reponses[randomIndex]){
 	correct++;
 	displayQuiz();
-	questions.pop();
   } else {
     	incorrect++;
 	displayQuiz();
-	questions.pop();
   }
 let message = "Tu as eu " + correct + " de bien et " + incorrect + " de mal"
 	document.getElementById("divAffiche").innerHTML = message;
