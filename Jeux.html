@@ -4,7 +4,7 @@
 <style>
 	.title {background: rgb(236, 207, 202);padding:6px;border:10px;border-style: solid; rbg(207, 202, 236);font-family: cursive; font-size: 20px;} 
 	table, th, td {border: 5px solid; font-size: 40px;}
-	<p>↓Clicker ici↓<p/>
+	<p>↓Clicker ici↓</p>
 	<a href="index.html">Retour a Enseignant de piano</a>
 </style>
   <meta charset="UTF-8">
@@ -15,7 +15,7 @@
   <title>Jeux</title>
 </head>
 <body>
-  <Center><h1>Jeux</h1>  
+  <Center><h1>Jeux</h1>  </Center>
 <br>
 <br>
 
@@ -151,8 +151,6 @@ document.addEventListener('keydown', e => {
 })
 
 function playNote(key) {
- let text = "Tu as clické la note " + key.dataset.note;
-    document.getElementById("divAffiche").innerHTML = text;
   const noteAudio = document.getElementById(key.dataset.note)
   noteAudio.currentTime = 0
   noteAudio.play()
@@ -164,12 +162,12 @@ function playNote(key) {
 if (key.dataset.note = reponses[randomIndex]){
 	correct++;
 	displayQuiz();
-  } else if (key.dataset.note != reponses[randomIndex]){
+  } else {
     	incorrect++;
 	displayQuiz();
   }
-let message = "Tu as eu " + correct + " de bien et " + incorrect + " de mal"
-	document.getElementById("divAffiche").innerHTML = message;
+ let text = "Tu a eu " + correct + " questions de bien et " + incorrect + " de mal";
+    document.getElementById("divAffiche").innerHTML = text;
 
 }
 	
