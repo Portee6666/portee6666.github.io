@@ -3,57 +3,6 @@
 <head>
  <style>
 	h1 {background: rgb(174, 177, 1);padding:6px;border:6px Solid; font-family: cursive; font-size: 20px; width: 300px;} 
-
-/*Source: https://github.com/WebDevSimplified/JavaScript-Piano*/  
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #dbcda0;
-}
-
-.piano {
-      display: flex;
-      justify-content: center;
-}
-
-.key {
-  height: calc(var(--width) * 4);
-  width: var(--width);
-}
-
-.white {
-  --width: 50px;
-  background-color: white;
-  border: 1px solid #333;
-}
-
-.white.active {
-  background-color: #CCC;
-}
-
-.black {
-  --width: 30px;
-  background-color: black;
-  margin-left: calc(var(--width) / -2);
-  margin-right: calc(var(--width) / -2);
-  z-index: 2;
-}
-
-.black.active {
-  background-color: #333;
-}
-
-title {
-font-family: "Brush Script MT", Cursive;
-}
-
-#quiz {
-border: 2px solid #dbcda0;
-  padding: 5px;
-}
-	 
  </style>
 </head> 
   <meta charset="UTF-8">
